@@ -1,1 +1,2 @@
-# Personalized-Workout-Plan
+# fitness-planner
+fitness-planner
