@@ -15,10 +15,9 @@ Including another URLconf
 """
 
 from django.urls import path
-
 from workout import views
 
 urlpatterns = [
-    path('workout/', views.abc, name='workout')
+    path('workout', views.abc, name='workout')
 
 ]

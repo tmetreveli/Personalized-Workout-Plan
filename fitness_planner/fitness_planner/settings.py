@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'workout'  # Add your app name here
+    'workout',
 ]
 ROOT_URLCONF = 'fitness_planner.urls'
 MIDDLEWARE = [
