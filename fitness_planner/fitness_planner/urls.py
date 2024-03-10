@@ -15,9 +15,39 @@ Including another URLconf
 """
 
 from django.urls import path
-from workout import views
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from django.contrib import admin
+from .views import *
+
+from user import views
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Fitness Tracker",
+        default_version='v1',
+        description="APIs to enable fitness tracking and enable workour plan creation",
+    ),
+    public=True
+)
 
 urlpatterns = [
-    path('workout', views.abc, name='workout')
 
+    path('admin/', admin.site.urls),
+    path('api/login/', views.LoginAPIView.as_view(), name='login'),
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
+    path('api/exercise/', ExerciseListView.as_view(), name='exercise-list'),
+    path('api/exercise/<int:pk>/', ExerciseDetailView.as_view(), name='exercise-detail'),
+
+    path('api/weight_tracking/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
+    path('api/weight_tracking/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
+
+    path('api/workout_plan/', WorkoutPlanListView.as_view(), name='exercise-list'),
+    path('api/workout_plan/<int:pk>/', WorkoutPlanDetailView.as_view(), name='exercise-detail'),
+
+    path('api/workout_plan/', WeightTrackingListView.as_view(), name='exercise-list'),
+    path('api/workout_plan/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),
+    path('api/create_user/', UserListView.as_view(), name = "create_user")
 ]
