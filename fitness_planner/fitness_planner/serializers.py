@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import WorkoutPlanExercise, WorkoutPlan, Exercise, WeightTracking
+from .models import WorkoutPlanExercise, WorkoutPlan, Exercise, WeightTracking, FitnessGoal
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -37,4 +37,9 @@ class ExerciseSerializer(serializers.ModelSerializer):
 class WeightTrackingSerializer(serializers.ModelSerializer):
     class Meta:
         model = WeightTracking
+        fields = '__all__'
+
+class FitnessGoalSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FitnessGoal
         fields = '__all__'

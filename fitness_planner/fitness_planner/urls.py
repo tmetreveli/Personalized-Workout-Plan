@@ -35,26 +35,26 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('api/login/', views.LoginAPIView.as_view(), name='login'),
-    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
     path('api/exercise/', ExerciseListView.as_view(), name='exercise-list'),
     path('api/exercise/<int:pk>/', ExerciseDetailView.as_view(), name='exercise-detail'),
 
-            # path('api/weight_tracking/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
-            # path('api/weight_tracking/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
+    path('api/create_sample_exercises/', create_sample_exercises, name="create_sample_exercises"),
 
-    # path('api/workout_plan_exercise/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
-    # path('api/workout_plan_exercise/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
+    path('api/workout_plan_exercise/', WorkoutPlanExerciseListView.as_view(), name='workout-plan-exercise-list'),
+    path('api/workout_plan_exercise/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(),
+         name='workout-plan-exercise-detail'),
 
-    path('api/workout_plan/', WorkoutPlanListView.as_view(), name='exercise-list'),
-    path('api/workout_plan/<int:pk>/', WorkoutPlanDetailView.as_view(), name='exercise-detail'),
-    path('api/create_sample_exercises/', create_sample_exercises, name = "create_sample_exercises"),
+    path('api/workout_plan/', WorkoutPlanListView.as_view(), name='workout-plan-list'),
+    path('api/workout_plan/<int:pk>/', WorkoutPlanDetailView.as_view(), name='workout-plan-detail'),
 
-    path('api/workout_plan/', WeightTrackingListView.as_view(), name='exercise-list'),
-    path('api/workout_plan/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),
-    path('api/create_user/', UserListView.as_view(), name = "create_user"),
+    path('api/weight_tracking/', WeightTrackingListView.as_view(), name='weight-tracking-list'),
+    path('api/weight_tracking/<int:pk>/', WeightTrackingDetailView.as_view(), name='weight-tracking-detail'),
 
-    path('api/weight_tracking/', WeightTrackingListView.as_view(), name='exercise-list'),
-    path('api/weight_tracking/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),
+    path('api/fitness_goal/', FitnessGoalListView.as_view(), name='fitness-goal-list'),
+    path('api/fitness_goal/<int:pk>/', FitnessGoalDetailView.as_view(), name='fitness-goal-detail'),
+
+    path('api/user_fitness_details/<int:pk>/', UserDetailAPIView.as_view(), name = 'user_fitness'),
+
+    path('api/create_user/', UserListView.as_view(), name="create-user"),
 ]

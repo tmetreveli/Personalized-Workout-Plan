@@ -34,13 +34,13 @@ class WorkoutPlanExercise(models.Model):
 
 class WeightTracking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.TextField(blank=True, null=True, default="Day 1")
     date = models.DateField()
     weight = models.DecimalField(max_digits=5, decimal_places=2)
 
 
 class FitnessGoal(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    weight = models.DecimalField(max_digits=5, decimal_places=2)
     weight_log = models.ForeignKey(WeightTracking, on_delete=models.CASCADE)
     goal_weight = models.DecimalField(max_digits=5, decimal_places=2)
     target_date = models.DateField()

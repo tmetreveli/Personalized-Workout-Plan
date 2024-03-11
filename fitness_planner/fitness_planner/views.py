@@ -1,15 +1,15 @@
 import json
 import os
-
+from rest_framework.views import APIView
 from django.http import HttpRequest, JsonResponse
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from django.views.decorators.http import require_http_methods
 
-from .models import WorkoutPlanExercise, WorkoutPlan, Exercise, WeightTracking
+from .models import WorkoutPlanExercise, WorkoutPlan, Exercise, WeightTracking, FitnessGoal
 from .serializers import WorkoutPlanSerializer, ExerciseSerializer, \
-    WorkoutPlanExerciseSerializer, WeightTrackingSerializer, UserSerializer
+    WorkoutPlanExerciseSerializer, WeightTrackingSerializer, UserSerializer, FitnessGoalSerializer
 
 
 class UserListView(generics.ListCreateAPIView):
@@ -82,3 +82,31 @@ def create_sample_exercises(request):
         return JsonResponse({"success": True})  # Corrected the JsonResponse syntax
     except Exception as e:
         return JsonResponse({"error": str(e)})  # Return error message in JSON format
+    
+
+class FitnessGoalListView(generics.ListCreateAPIView):
+    queryset = FitnessGoal.objects.all()
+    serializer_class = FitnessGoalSerializer
+
+
+class FitnessGoalDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = FitnessGoal.objects.all()
+    serializer_class = FitnessGoalSerializer
+
+
+class UserDetailAPIView(APIView):
+
+    def get(self, request, pk):
+        weight_trackings = WeightTracking.objects.filter(user_id=pk)
+        fitness_goals = FitnessGoal.objects.filter(user_id=pk)
+
+        weight_tracking_serializer = WeightTrackingSerializer(weight_trackings, many=True)
+        fitness_goal_serializer = FitnessGoalSerializer(fitness_goals, many=True)
+
+        user_details = {
+            'weight_tracking': weight_tracking_serializer.data,
+            'fitness_goals': fitness_goal_serializer.data,
+            # Add other related data here
+        }
+
+        return JsonResponse(user_details)
