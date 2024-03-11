@@ -41,8 +41,11 @@ urlpatterns = [
     path('api/exercise/', ExerciseListView.as_view(), name='exercise-list'),
     path('api/exercise/<int:pk>/', ExerciseDetailView.as_view(), name='exercise-detail'),
 
-    path('api/weight_tracking/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
-    path('api/weight_tracking/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
+            # path('api/weight_tracking/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
+            # path('api/weight_tracking/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
+
+    # path('api/workout_plan_exercise/', WorkoutPlanExerciseListView.as_view(), name='exercise-list'),
+    # path('api/workout_plan_exercise/<int:pk>/', WorkoutPlanExerciseDetailView.as_view(), name='exercise-detail'),
 
     path('api/workout_plan/', WorkoutPlanListView.as_view(), name='exercise-list'),
     path('api/workout_plan/<int:pk>/', WorkoutPlanDetailView.as_view(), name='exercise-detail'),
@@ -50,5 +53,8 @@ urlpatterns = [
 
     path('api/workout_plan/', WeightTrackingListView.as_view(), name='exercise-list'),
     path('api/workout_plan/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),
-    path('api/create_user/', UserListView.as_view(), name = "create_user")
+    path('api/create_user/', UserListView.as_view(), name = "create_user"),
+
+    path('api/weight_tracking/', WeightTrackingListView.as_view(), name='exercise-list'),
+    path('api/weight_tracking/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),
 ]

@@ -61,24 +61,24 @@ class WeightTrackingDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 @require_http_methods(["POST"])
 def create_sample_exercises(request):
-    # try:
-    # Specify the path to your JSON file
-    file_path = os.path.join(os.path.dirname(__file__), 'sample_exercises.json')
+    try:
+        # Specify the path to your JSON file
+        file_path = os.path.join(os.path.dirname(__file__), 'sample_exercises.json')
 
-    # Read the JSON file
-    with open(file_path, 'r') as file:
-        data = json.load(file)
+        # Read the JSON file
+        with open(file_path, 'r') as file:
+            data = json.load(file)
 
-    exercise_data = data.get("exercises")
+        exercise_data = data.get("exercises")
 
-    for exercise in exercise_data:
-        Exercise.objects.create(
-            name=exercise['name'],
-            description=exercise['description'],
-            execution_steps=exercise['execution_steps'],
-            target_muscles=exercise['target_muscles']
-        )
+        for exercise in exercise_data:
+            Exercise.objects.create(
+                name=exercise['name'],
+                description=exercise['description'],
+                execution_steps=exercise['execution_steps'],
+                target_muscles=exercise['target_muscles']
+            )
 
-    return JsonResponse({"success": True})  # Corrected the JsonResponse syntax
-# except Exception as e:
-#     return JsonResponse({"error": str(e)})  # Return error message in JSON format
+        return JsonResponse({"success": True})  # Corrected the JsonResponse syntax
+    except Exception as e:
+        return JsonResponse({"error": str(e)})  # Return error message in JSON format
