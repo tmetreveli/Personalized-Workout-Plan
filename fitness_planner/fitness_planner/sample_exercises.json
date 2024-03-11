@@ -1,0 +1,82 @@
+{
+    "exercises": [
+      {
+        "name": "Push-up",
+        "description": "A basic upper body exercise performed in a prone position.",
+        "execution_steps": "1. Start in a plank position. 2. Lower your body until your chest nearly touches the floor. 3. Push yourself back up to the starting position.",
+        "target_muscles": "Chest, shoulders, triceps"
+      },
+      {
+        "name": "Squats",
+        "description": "A compound exercise that targets the lower body muscles.",
+        "execution_steps": "1. Stand with your feet shoulder-width apart. 2. Lower your body as if you were sitting back into a chair. 3. Keep your chest upright and knees behind your toes. 4. Push through your heels to return to the starting position.",
+        "target_muscles": "Quadriceps, hamstrings, glutes"
+      },
+      {
+        "name": "Deadlifts",
+        "description": "A weight training exercise in which a loaded barbell or bar is lifted off the ground to the level of the hips, then lowered to the ground.",
+        "execution_steps": "1. Stand with feet hip-width apart, toes pointing forward. 2. Bend at the hips and knees, keeping your back flat and chest up. 3. Grasp the barbell with hands shoulder-width apart. 4. Push through your heels to lift the bar, keeping it close to your body. 5. Extend your hips and knees to stand up straight. 6. Lower the barbell by bending at the hips and knees, keeping it close to your body.",
+        "target_muscles": "Lower back, glutes, hamstrings, quadriceps, traps"
+      },
+      {
+        "name": "Bench Press",
+        "description": "A weight training exercise in which a barbell is pressed upwards from a supine position.",
+        "execution_steps": "1. Lie flat on a bench, feet planted on the ground. 2. Grip the barbell slightly wider than shoulder-width apart. 3. Lower the barbell to your chest, keeping elbows at a 45-degree angle. 4. Push the barbell upward until arms are fully extended. 5. Lower the barbell back down to chest level and repeat.",
+        "target_muscles": "Chest, shoulders, triceps"
+      },
+      {
+        "name": "Pull-ups",
+        "description": "An upper body compound pulling exercise.",
+        "execution_steps": "1. Grip the pull-up bar with hands slightly wider than shoulder-width apart, palms facing away from you. 2. Hang freely with arms fully extended. 3. Pull your body up until your chin clears the bar. 4. Lower your body until arms are fully extended and repeat.",
+        "target_muscles": "Back, biceps, shoulders"
+      },
+      {
+        "name": "Dumbbell Lunges",
+        "description": "A lower body exercise that targets the quadriceps, hamstrings, glutes, and calves.",
+        "execution_steps": "1. Stand with feet hip-width apart, holding dumbbells at your sides. 2. Take a large step forward with one leg, lowering your body until both knees are bent at a 90-degree angle. 3. Push through your front heel to return to the starting position. 4. Repeat with the opposite leg.",
+        "target_muscles": "Quadriceps, hamstrings, glutes, calves"
+      },
+      {
+        "name": "Russian Twists",
+        "description": "An abdominal exercise that also engages the obliques.",
+        "execution_steps": "1. Sit on the ground with knees bent and feet lifted off the floor. 2. Lean back slightly and hold a weight or medicine ball with both hands. 3. Rotate your torso to the right, bringing the weight towards the ground beside your hip. 4. Return to the center and then rotate to the left, repeating the movement.",
+        "target_muscles": "Abdominals, obliques"
+      },
+      {
+        "name": "Plank",
+        "description": "An isometric core exercise that targets multiple muscle groups.",
+        "execution_steps": "1. Start in a push-up position with arms extended. 2. Engage your core and hold your body in a straight line from head to heels. 3. Keep your shoulders, hips, and ankles aligned. 4. Hold the position for the desired amount of time.",
+        "target_muscles": "Core, shoulders, back"
+      },
+      {
+        "name": "Leg Press",
+        "description": "A resistance training exercise that targets the quadriceps, hamstrings, and glutes.",
+        "execution_steps": "1. Sit on the leg press machine with your back against the pad and feet shoulder-width apart on the platform. 2. Release the safety bars and extend your legs, pushing the platform away from your body. 3. Bend your knees and lower the platform towards your chest. 4. Push the platform back up to the starting position and repeat.",
+        "target_muscles": "Quadriceps, hamstrings, glutes, calves"
+      },
+      {
+        "name": "Barbell Rows",
+        "description": "A compound back exercise that targets the lats, rhomboids, and traps.",
+        "execution_steps": "1. Stand with feet hip-width apart, knees slightly bent, and grip a barbell with hands shoulder-width apart, palms facing down. 2. Bend forward at the hips, keeping your back flat and chest up. 3. Pull the barbell towards your lower chest, squeezing your shoulder blades together. 4. Lower the barbell back down to the starting position and repeat.",
+        "target_muscles": "Back, biceps, shoulders"
+      },
+      {
+        "name": "Dumbbell Shoulder Press",
+        "description": "An upper body exercise that targets the shoulders and triceps.",
+        "execution_steps": "1. Sit on a bench with back support, holding dumbbells at shoulder height with palms facing forward. 2. Press the dumbbells upward until arms are fully extended. 3. Lower the dumbbells back down to shoulder height and repeat.",
+        "target_muscles": "Shoulders, triceps"
+      },
+      {
+        "name": "Bicep Curls",
+        "description": "An isolation exercise that targets the biceps brachii.",
+        "execution_steps": "1. Stand with feet shoulder-width apart, holding dumbbells at arm length by your sides, palms facing forward. 2. Curl the dumbbells towards your shoulders, keeping your elbows close to your body. 3. Lower the dumbbells back down to the starting position and repeat.",
+        "target_muscles": "Biceps"
+      },
+      {
+        "name": "Tricep Dips",
+        "description": "An exercise that targets the triceps brachii.",
+        "execution_steps": "1. Sit on the edge of a bench with hands placed beside your hips, fingers pointing forward. 2. Lift your hips off the bench and walk",
+        "target_muscles": "Triceps"
+      }
+    ]
+  }

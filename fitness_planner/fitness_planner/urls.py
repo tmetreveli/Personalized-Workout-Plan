@@ -46,6 +46,7 @@ urlpatterns = [
 
     path('api/workout_plan/', WorkoutPlanListView.as_view(), name='exercise-list'),
     path('api/workout_plan/<int:pk>/', WorkoutPlanDetailView.as_view(), name='exercise-detail'),
+    path('api/create_sample_exercises/', create_sample_exercises, name = "create_sample_exercises"),
 
     path('api/workout_plan/', WeightTrackingListView.as_view(), name='exercise-list'),
     path('api/workout_plan/<int:pk>/', WeightTrackingDetailView.as_view(), name='exercise-detail'),

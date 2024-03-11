@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Exercise(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+    execution_steps = models.TextField(default=None, blank=True, null=True)
     target_muscles = models.CharField(max_length=255)
 
     def __str__(self):
