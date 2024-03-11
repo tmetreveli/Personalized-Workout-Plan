@@ -57,4 +57,7 @@ urlpatterns = [
     path('api/user_fitness_details/<int:pk>/', UserDetailAPIView.as_view(), name = 'user_fitness'),
 
     path('api/create_user/', UserListView.as_view(), name="create-user"),
+
+    path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
