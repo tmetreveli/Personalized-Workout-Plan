@@ -30,7 +30,10 @@ class WorkoutPlanExercise(models.Model):
     exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
     sets = models.PositiveIntegerField()
     reps = models.PositiveIntegerField()
+    completed = models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.workout_plan.name
 
 class WeightTracking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
