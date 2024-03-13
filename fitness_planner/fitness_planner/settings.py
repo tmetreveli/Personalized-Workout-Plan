@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'drf_spectacular_sidecar',
     'drf_spectacular',
     'rest_framework_simplejwt',
+    'drf_yasg',
     'user',  
     'fitness_planner',
-    'drf_yasg',
+    
 ]
 from datetime import timedelta
 

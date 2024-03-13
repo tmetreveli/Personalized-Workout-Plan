@@ -137,22 +137,14 @@ class WorkoutPlanViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['post'])
     def update_progress(self, request, pk=None):
         workout_plan_exercise = self.get_object()
-        print("🚀 ~ workout plan exercise:", workout_plan_exercise)
-        print("🚀 ~ workout plan exercise sets:", workout_plan_exercise.sets)
         workout_plan = workout_plan_exercise.workout_plan.pk
-        print("🚀 ~ workout plan:", workout_plan)
         current_exercise_id = request.data.get('exercise')
-        print("🚀 ~ id:", current_exercise_id)
         repetitions_completed = request.data.get('reps')
         sets_completed = request.data.get('sets')
-        # Assume duration_completed and distance_completed are handled elsewhere or not applicable
 
         try:    
-            print("🚀 Try ")
             current_wpe = WorkoutPlanExercise.objects.get(workout_plan=workout_plan, exercise=current_exercise_id)
-            print("🚀 Here ")
             if current_wpe.sets <= sets_completed and current_wpe.reps <= repetitions_completed:
-                print("🚀 ~ current_wpe.completed:", )
                 current_wpe.completed = True
                 current_wpe.save()
 
@@ -162,7 +154,6 @@ class WorkoutPlanViewSet(viewsets.ModelViewSet):
 
                 if next_wpe is None:
                     return Response({'workout_plan_status': 'completed'}, status=status.HTTP_200_OK)
-                print("🚀 Next wpe ", next_wpe.exercise)
                 return Response(WorkoutPlanExerciseSerializer(next_wpe).data, status=status.HTTP_200_OK)
         except WorkoutPlanExercise.DoesNotExist:
             return Response(status=status.HTTP_400_BAD_REQUEST)
