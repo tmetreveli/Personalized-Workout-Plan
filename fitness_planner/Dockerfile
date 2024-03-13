@@ -23,5 +23,5 @@ ENV REDIS_REMOTE_PORT=6379 \
     
 # Define the command to run your application
 
-CMD sh -c "python manage.py migrate && python manage.py create_sample_dataset && python manage.py runserver 0.0.0.0:8000"
+CMD sh -c "python manage.py migrate && python manage.py management/commands/create_sample_dataset && python manage.py runserver 0.0.0.0:8000"
 
