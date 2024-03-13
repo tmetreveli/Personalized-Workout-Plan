@@ -1,3 +1,4 @@
+# Personalized Workout Plan
 ===================
 
 These are the major functions of Fitness Planner as a service:
@@ -5,6 +6,7 @@ These are the major functions of Fitness Planner as a service:
 1. Service that allows user creation and authentication
 2. Users can create their own workout plans and Fitness goals
 3. Users are enabled to track their goals and update weight tracking information
+4. Users can exercise according to guided workout plan, which gives next exercises in real time
 
 ## Getting started
 ---
@@ -149,7 +151,7 @@ To access the API endpoints, you need to create a user and collect the access to
 - Body: JSON object containing user details (username, password)
 - Response: HTTP 200 for the user credentials
 
-### Create a User
+### Login
 
 - Endpoint: `POST api/login/`
 - Body: JSON object containing user details ( username, password)
@@ -224,6 +226,37 @@ To access the API endpoints, you need to create a user and collect the access to
   - `goal_id`: ID of the fitness goal
 - Response: JSON object containing progress towards the fitness goal
 
+#### Add an Exercise to a Workout Plan
+
+- Endpoint
+
+**POST** `/workouts/{workout_id}/exercises`
+
+ - Path Parameters
+
+- `workout_id`: ID of the workout plan to which the exercise will be added.
+
+### Body
+
+A JSON object containing the details of the exercise you want to add. For example:
+
+```json
+{
+  "name": "Push Ups",
+  "sets": 3,
+  "reps": 12
+}
+```
+### Description
+
+To add an exercise to a workout plan, send a POST request to the /workouts/{workout_id}/exercises endpoint with the workout_id in the path and the exercise details in the request body. The request should be authenticated, as indicated by the IsAuthenticated permission class in the WorkoutPlanViewSet.
+
+The backend functionality for adding an exercise is encapsulated within the WorkoutPlanViewSet, a subclass of viewsets.ModelViewSet. This viewset is configured to use WorkoutPlanExerciseSerializer for serializing data and requires users to be authenticated.
+
+Upon receiving the request, the system will validate the input against the expected schema and, if valid, proceed to add the exercise to the specified workout plan. It's important to ensure that the workout_id corresponds to an existing workout plan. The operation concludes by returning a JSON object representing the updated workout plan, including the newly added exercise.
+
+This operation is distinct from the update_progress action, which is designed to update the completion status of exercises within a workout plan based on the number of sets and reps completed. The code snippet provided earlier demonstrates the handling of progress updates rather than the addition of new exercises.
+
 ## Conclusion
 
-This concludes the Fitness API documentation. If you have any questions or need further assistance, please contact our support team. Happy exercising!
+This concludes the Fitness API documentation. If you have any questions or need further assistance, please contact me. Happy exercising!
