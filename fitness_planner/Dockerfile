@@ -17,11 +17,11 @@ ENV REDIS_REMOTE_PORT=6379 \
     REDIS_REMOTE_HOST=host.docker.internal \
     POSTGRES_REMOTE_PORT=5432 \
     POSTGRES_USERNAME=postgres \
-    POSTGRES_PASSWORD=postgres \
+    POSTGRES_PASSWORD=messi10 \
     RELEASE_VERSION=${VERSION} \
     OPENSSL_CONF=/home/integration-proxy/openssl.cnf
     
 # Define the command to run your application
 
-CMD sh -c "python manage.py migrate && python manage.py management/commands/create_sample_dataset && python manage.py runserver 0.0.0.0:8000"
+CMD sh -c "python manage.py migrate && python manage.py create_sample_dataset && python manage.py runserver 0.0.0.0:8000"
 
