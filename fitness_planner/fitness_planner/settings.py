@@ -1,6 +1,7 @@
 # settings.py
 
 import os
+from datetime import timedelta
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -43,10 +44,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework_simplejwt',
-    'user',  # Add your app name here,
+    'user',
     'fitness_planner'
 ]
-from datetime import timedelta
+
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [

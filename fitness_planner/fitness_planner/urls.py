@@ -35,9 +35,6 @@ schema_view = get_schema_view(
 router = DefaultRouter()
 router.register(r'workout-plans', WorkoutPlanViewSet)
 
-
-
-
 urlpatterns = [
 
     path('admin/', admin.site.urls),
